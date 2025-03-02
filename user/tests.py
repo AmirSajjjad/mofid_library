@@ -25,7 +25,7 @@ class APIViewsTests(APITestCase):
     def test_authentication(self):
         url = reverse('authors-without-book-list')
         response = self.client.get(url)
-        self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
 
     def test_authors_without_books(self):
         url = reverse('authors-without-book-list')

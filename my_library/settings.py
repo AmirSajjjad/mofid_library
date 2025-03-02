@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-aak(kilutf!!w#os4ob9f*1avxpnod_hyh&pgnw=is_s=&j%qp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -55,8 +55,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
-    'user.middlewares.AuthenticationMiddleware',
 ]
 
 ROOT_URLCONF = 'my_library.urls'
