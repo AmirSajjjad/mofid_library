@@ -23,6 +23,8 @@ class Book(models.Model):
     def __str__(self):
         return self.title
 
+    #TODO: class Meta
+
 
 class BookAuthor(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE)

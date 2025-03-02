@@ -1,3 +1,4 @@
+from django.core.cache import cache
 from rest_framework import viewsets
 from rest_framework.response import Response
 from django.conf import settings
@@ -21,6 +22,7 @@ class CheckToken(viewsets.ViewSet):
 class BooksWithAuthorNameViewSet(CheckToken, viewsets.ViewSet):
     def list(self, request, *args, **kwargs):
         queryset = Book.book_manager.books_with_author_name()
+        cache.get("sss")
         serializer = BooksWithAuthorNameSerializer(queryset, many=True)
         return Response(serializer.data)
 

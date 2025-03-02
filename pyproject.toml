@@ -1,0 +1,18 @@
+[project]
+name = "my_library"
+version = "0.1.0"
+description = "Mofid_App Task"
+
+[dependencies]
+python = "^3.9"
+Django = ">=5.1"
+djangorestframework = ">=3.15"
+drf-yasg = ">=1.21"
+django-mysql = ">=4.16"
+psycopg2 = ">=2.9"
+python-dotenv = ">=1.0"
+
+[dependency-groups]
+dev = [
+    "pillow>=11.1.0",
+]

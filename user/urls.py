@@ -14,6 +14,7 @@ router.register(r'authors-with-smaller-book-price', AuthorsWithSmallerBookPriceV
 router.register(r'authors-without-book', AuthorWithoutBookViewSet, basename='authors-without-book')
 router.register(r'books-with-author-name', BooksWithAuthorNameViewSet, basename='books-with-author-name')
 
+# TODO: change routes:  user/...
 urlpatterns = [
     path('', include(router.urls)),
 ]

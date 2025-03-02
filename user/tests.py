@@ -1,3 +1,5 @@
+from unittest.mock import patch
+
 from django.urls import reverse
 from django.conf import settings
 from rest_framework import status
@@ -12,6 +14,7 @@ class APIViewsTests(APITestCase):
         self.author2 = Author.objects.create(name='Author 2')
         self.author3 = Author.objects.create(name='Author 3')
         self.author4 = Author.objects.create(name='Author 4')
+        #TODO: bulk_create()
         self.book1 = Book.objects.create(title='Book 1', price=123)
         self.book2 = Book.objects.create(title='Book 2', price=456)
         self.book3 = Book.objects.create(title='Book 3', price=789)
@@ -45,6 +48,7 @@ class APIViewsTests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         print(response.data)
 
+    @patch("")
     def test_books_with_authors(self):
         url = reverse('books-with-author-name-list')
         response = self.client.get(url, headers=self.header)
